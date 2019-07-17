@@ -1,7 +1,9 @@
 import pygame
-class Ship():
-    def __init__(self, screen, ai_set):
+from pygame.sprite import Sprite
+class Ship(Sprite):
+    def __init__(self, ai_set, screen):
         '''初始化飞船并初始化器位置'''
+        super().__init__()
         self.screen = screen
         self.ai_set = ai_set
         #加载飞船图像并获取其外形
@@ -29,5 +31,9 @@ class Ship():
     def blitme(self):
         """在指定位置绘制飞船"""
         self.screen.blit(self.image, self.rect)
+
+    def center_ship(self):
+        '''飞船居中'''
+        self.center = self.screen_rect.centerx
 
 

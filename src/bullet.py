@@ -13,6 +13,7 @@ class Bullet(Sprite):
         self.rect = pygame.Rect(0, 0, ai_set.bullet_width, ai_set.bullet_height)
         self.rect.centerx = ship.rect.centerx
         self.rect.top = ship.rect.top
+        # print(self.rect.bottom)
         #存储用小数表示的子弹位置
         self.y = float(self.rect.y)
         self.color = ai_set.bullet_color
